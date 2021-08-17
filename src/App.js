@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Quiz from "./components/Quiz";
 
 function App() {
+  const [quiz, setQuiz] = useState(true);
+  const [isTriangle, setIsTriangle] = useState(false);
+  const [area, setArea] = useState(false);
+  const [thirdSide, setThirdSide] = useState(false);
+
+  const quizHandler = () => {
+    setQuiz(true);
+    setIsTriangle(false);
+    setArea(false);
+    setThirdSide(false);
+  };
+
+  const isTriangleHandler = () => {
+    setQuiz(false);
+    setIsTriangle(true);
+    setArea(false);
+    setThirdSide(false);
+  };
+
+  const thirdSideHandler = () => {
+    setQuiz(false);
+    setIsTriangle(false);
+    setArea(false);
+    setThirdSide(true);
+  };
+
+  const areaHandler = () => {
+    setQuiz(false);
+    setIsTriangle(false);
+    setArea(true);
+    setThirdSide(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Fun With Triangles </h1>
+      <hr />
+      <div className="row-buttons">
+        <button onClick={quizHandler}>Quiz On Triangles</button>
+        <button onClick={isTriangleHandler}>Is it triangle?</button>
+        <button onClick={areaHandler}>Area Of a Triangle</button>
+        <button onClick={thirdSideHandler}>Find Third side</button>
+      </div>
+      <div className="container">
+        {quiz && <Quiz />}
+        {isTriangle && <h3>Is Triangle</h3>}
+        {area && <h3>Area </h3>}
+        {thirdSide && <h3>Third Side</h3>}
+      </div>
     </div>
   );
 }
