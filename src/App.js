@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Quiz from "./components/Quiz";
+import IsTriangle from "./components/IsTriangle";
 
 function App() {
   const [quiz, setQuiz] = useState(true);
@@ -48,7 +49,7 @@ function App() {
       </div>
       <div className="container">
         {quiz && <Quiz />}
-        {isTriangle && <h3>Is Triangle</h3>}
+        {isTriangle && <IsTriangle />}
         {area && <h3>Area </h3>}
         {thirdSide && <h3>Third Side</h3>}
       </div>
