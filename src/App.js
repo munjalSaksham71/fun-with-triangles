@@ -3,6 +3,7 @@ import "./App.css";
 import Quiz from "./components/Quiz";
 import IsTriangle from "./components/IsTriangle";
 import AreaOfTriangle from "./components/AreaOfTriangle";
+import ThirdSide from "./components/ThirdSide";
 
 function App() {
   const [quiz, setQuiz] = useState(true);
@@ -52,7 +53,7 @@ function App() {
         {quiz && <Quiz />}
         {isTriangle && <IsTriangle />}
         {area && <AreaOfTriangle />}
-        {thirdSide && <h3>Third Side</h3>}
+        {thirdSide && <ThirdSide />}
       </div>
     </div>
   );
