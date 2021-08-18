@@ -34,7 +34,7 @@ const AreaOfTriangle = () => {
         />
       </div>
       <button onClick={areaOfTriangle}>Calculate</button>
-      <div style={{ fontSize: "xx-larger" }}>{message}</div>
+      <div>{message}</div>
     </div>
   );
 };
